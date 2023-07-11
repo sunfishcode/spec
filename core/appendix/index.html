@@ -1,19 +1,21 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en">
   <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Appendix &#8212; WebAssembly 1.0</title>
-    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <script type="text/javascript" src="../_static/documentation_options.js"></script>
-    <script type="text/javascript" src="../_static/jquery.js"></script>
-    <script type="text/javascript" src="../_static/underscore.js"></script>
-    <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>Appendix &#8212; WebAssembly 2.0 (Draft 2023-07-11)</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script>window.MathJax = {"tex": {"maxBuffer": 30720}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Embedding" href="embedding.html" />
@@ -24,7 +26,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
-  </head> <script type="text/javascript">MathJax.Hub.Config({TeX: {MAXBUFFER: 30*1024}})</script><body>
+  </head><body>
   <div class="document">
     
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -45,6 +47,7 @@
 <li class="toctree-l2"><a class="reference internal" href="algorithm.html">Validation Algorithm</a></li>
 <li class="toctree-l2"><a class="reference internal" href="custom.html">Custom Sections</a></li>
 <li class="toctree-l2"><a class="reference internal" href="properties.html">Soundness</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changes.html">Change History</a></li>
 </ul>
 </li>
 </ul>
@@ -65,31 +68,34 @@
 </ul>
 
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
     </form>
     </div>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
       <div class="documentwrapper">
         <div class="bodywrapper">
+          
+
           <div class="body" role="main">
             
-  <div class="section" id="appendix">
-<span id="id1"></span><h1>Appendix<a class="headerlink" href="#appendix" title="Permalink to this headline">¶</a></h1>
+  <section id="appendix">
+<span id="id1"></span><h1>Appendix<a class="headerlink" href="#appendix" title="Permalink to this heading">¶</a></h1>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="embedding.html">Embedding</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="embedding.html#types">Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="embedding.html#errors">Errors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="embedding.html#pre-and-post-conditions">Pre- and Post-Conditions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="embedding.html#store">Store</a></li>
 <li class="toctree-l2"><a class="reference internal" href="embedding.html#modules">Modules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="embedding.html#exports">Exports</a></li>
+<li class="toctree-l2"><a class="reference internal" href="embedding.html#module-instances">Module Instances</a></li>
 <li class="toctree-l2"><a class="reference internal" href="embedding.html#functions">Functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="embedding.html#tables">Tables</a></li>
 <li class="toctree-l2"><a class="reference internal" href="embedding.html#memories">Memories</a></li>
@@ -112,7 +118,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="properties.html">Soundness</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="properties.html#values-and-results">Values and Results</a></li>
+<li class="toctree-l2"><a class="reference internal" href="properties.html#results">Results</a></li>
 <li class="toctree-l2"><a class="reference internal" href="properties.html#store-validity">Store Validity</a></li>
 <li class="toctree-l2"><a class="reference internal" href="properties.html#configuration-validity">Configuration Validity</a></li>
 <li class="toctree-l2"><a class="reference internal" href="properties.html#administrative-instructions">Administrative Instructions</a></li>
@@ -120,18 +126,23 @@
 <li class="toctree-l2"><a class="reference internal" href="properties.html#theorems">Theorems</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="changes.html">Change History</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="changes.html#release-2-0">Release 2.0</a></li>
+</ul>
+</li>
 </ul>
 </div>
-</div>
+</section>
 
 
           </div>
+          
         </div>
       </div>
     <div class="clearer"></div>
   </div>
     <div class="footer">
-      &copy;2017, WebAssembly Community Group.
+      &copy;2022, WebAssembly Community Group.
       
     </div>
 
